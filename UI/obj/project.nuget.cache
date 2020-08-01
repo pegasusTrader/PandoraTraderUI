@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "dgSpecHash": "muQ+wkrcMsgC4PiC593I5GyO//uWdkWBZhPsJZzHg6hkEv/+qv0J9nHzU7rHhpSJCVF+W//Ww/Jv9HqwDPyS+g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Lexan\\Desktop\\PandoraTraderUI\\PandoraTraderUI\\UI\\UI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Lexan\\.nuget\\packages\\caliburn.micro\\3.2.0\\caliburn.micro.3.2.0.nupkg.sha512",
+    "C:\\Users\\Lexan\\.nuget\\packages\\caliburn.micro.core\\3.2.0\\caliburn.micro.core.3.2.0.nupkg.sha512",
+    "C:\\Users\\Lexan\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "已使用“.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8”而不是项目目标框架“.NETCoreApp,Version=v3.1”还原包“Caliburn.Micro 3.2.0”。此包可能与项目不完全兼容。",
+      "libraryId": "Caliburn.Micro",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "已使用“.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8”而不是项目目标框架“.NETCoreApp,Version=v3.1”还原包“Caliburn.Micro.Core 3.2.0”。此包可能与项目不完全兼容。",
+      "libraryId": "Caliburn.Micro.Core",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}

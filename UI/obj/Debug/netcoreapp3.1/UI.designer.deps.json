@@ -1,0 +1,54 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Caliburn.Micro/3.2.0": {
+        "dependencies": {
+          "Caliburn.Micro.Core": "3.2.0"
+        },
+        "runtime": {
+          "lib/net45/Caliburn.Micro.Platform.Core.dll": {
+            "assemblyVersion": "3.2.0.0",
+            "fileVersion": "3.2.0.0"
+          },
+          "lib/net45/Caliburn.Micro.Platform.dll": {
+            "assemblyVersion": "3.2.0.0",
+            "fileVersion": "3.2.0.0"
+          },
+          "lib/net45/System.Windows.Interactivity.dll": {
+            "assemblyVersion": "4.5.0.0",
+            "fileVersion": "3.0.40218.0"
+          }
+        }
+      },
+      "Caliburn.Micro.Core/3.2.0": {
+        "runtime": {
+          "lib/net45/Caliburn.Micro.dll": {
+            "assemblyVersion": "3.2.0.0",
+            "fileVersion": "3.2.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Caliburn.Micro/3.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GILmeguZra44K77M0QFcLR+Xjp/3Vl6IkWs5aOQOYmxoqiO9YuGyK7/2Aha6jKR6LtR03yv3TVg8rkqeBDNZAA==",
+      "path": "caliburn.micro/3.2.0",
+      "hashPath": "caliburn.micro.3.2.0.nupkg.sha512"
+    },
+    "Caliburn.Micro.Core/3.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jmpC4OSvejrrIlcSmlzFjtyOmHQBrKgqJ9hy/LeWGoytct0e2b+TVgzWHTtvkzBF6TWWYlWCNErF10O6hNoL0g==",
+      "path": "caliburn.micro.core/3.2.0",
+      "hashPath": "caliburn.micro.core.3.2.0.nupkg.sha512"
+    }
+  }
+}
