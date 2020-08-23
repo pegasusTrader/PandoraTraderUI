@@ -39,36 +39,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cwBasicKindleStrategy.cs" />
-    <Compile Include="cwBasicKindleStrategyCsharp.cs" />
-    <Compile Include="cwBasicKindleStrategyCsharpPINVOKE.cs" />
-    <Compile Include="cwBasicStrategy.cs" />
-    <Compile Include="cwCTPQuotes.cs" />
-    <Compile Include="cwCTPTrade.cs" />
     <Compile Include="cwPandoraStruct.cs" />
     <Compile Include="cwPandoraUIApp.cs" />
     <Compile Include="program.cs" />
-    <Compile Include="SWIGTYPE_p_cwAccountPtr.cs" />
-    <Compile Include="SWIGTYPE_p_cwFtdcDirectionType.cs" />
-    <Compile Include="SWIGTYPE_p_cwInsertOrderType.cs" />
-    <Compile Include="SWIGTYPE_p_cwInstrumentDataPtr.cs" />
-    <Compile Include="SWIGTYPE_p_cwMarketDataPtr.cs" />
-    <Compile Include="SWIGTYPE_p_cwMDAPIType.cs" />
-    <Compile Include="SWIGTYPE_p_cwOpenClose.cs" />
-    <Compile Include="SWIGTYPE_p_cwOrderPtr.cs" />
-    <Compile Include="SWIGTYPE_p_cwPositionPtr.cs" />
-    <Compile Include="SWIGTYPE_p_cwProductTradeTime__cwTradeTimeSpace.cs" />
-    <Compile Include="SWIGTYPE_p_cwRspInfoPtr.cs" />
-    <Compile Include="SWIGTYPE_p_cwTradeAPIType.cs" />
-    <Compile Include="SWIGTYPE_p_cwTradePtr.cs" />
-    <Compile Include="SWIGTYPE_p_int.cs" />
-    <Compile Include="SWIGTYPE_p_std__mapT_std__string_cwOrderPtr_t.cs" />
-    <Compile Include="SWIGTYPE_p_std__mapT_std__string_cwPositionPtr_t.cs" />
-    <Compile Include="SWIGTYPE_p_std__shared_ptrT_cwKindleStickSeries_t.cs" />
-    <Compile Include="SWIGTYPE_p_std__string.cs" />
-    <Compile Include="SWIGTYPE_p_std__unordered_mapT_std__string_cwInstrumentDataPtr_t.cs" />
-    <Compile Include="SWIGTYPE_p_std__vectorT_std__string_t.cs" />
-    <Compile Include="SWIGTYPE_p_void.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
