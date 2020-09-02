@@ -21,4 +21,8 @@ void cwPandoraUIApp::Run(const char* pszMdFront, const char* pszTradeFront)
 	{
 		this->m_mdCollector.Connect(pszMdFront);
 	}
+
+	std::vector<std::string> SubscribeInstrument;
+	SubscribeInstrument.push_back("ag2012");
+	this->m_mdCollector.SubscribeMarketData(SubscribeInstrument);
 }
