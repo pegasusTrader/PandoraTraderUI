@@ -50,7 +50,6 @@ namespace PandoraUIStrategy
             var dll_path = new FileInfo(this.GetType().Assembly.Location).DirectoryName;
             Environment.CurrentDirectory = dll_path;
             dll_path = Path.Combine(dll_path, "PandoraDLL.dll");
-            //_handle = LoadLibrary(Path.Combine(dll_path, "PandoraDLL.dll"));
             _handle = LoadLibrary(dll_path);
             if (_handle == IntPtr.Zero)
             {
@@ -76,44 +75,60 @@ namespace PandoraUIStrategy
 
         //App initial interface:
         [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-        public delegate IntPtr DealSetMdLoginField(IntPtr pApp, string strBrokerID, string strUserID, string strPassword);
+        public delegate IntPtr DeleSetMdLoginField(IntPtr pApp, string strBrokerID, string strUserID, string strPassword);
         public IntPtr SetMdLoginField(string strBrokerID, string strUserID, string strPassword)
         {
-            return (Invoke(_handle, "SetMdLoginField", typeof(DealSetMdLoginField)) as DealSetMdLoginField)(_pApp, strBrokerID, strUserID, strPassword);
+            return (Invoke(_handle, "SetMdLoginField", typeof(DeleSetMdLoginField)) as DeleSetMdLoginField)(_pApp, strBrokerID, strUserID, strPassword);
         }
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-        public delegate IntPtr DealSetTradeLoginField(IntPtr pApp, string strBrokerID, string strUserID, string strPassword);
+        public delegate IntPtr DeleSetTradeLoginField(IntPtr pApp, string strBrokerID, string strUserID, string strPassword);
         public IntPtr SetTradeLoginField(string strBrokerID, string strUserID, string strPassword)
         {
-            return (Invoke(_handle, "SetTradeLoginField", typeof(DealSetTradeLoginField)) as DealSetTradeLoginField)(_pApp, strBrokerID, strUserID, strPassword);
+            return (Invoke(_handle, "SetTradeLoginField", typeof(DeleSetTradeLoginField)) as DeleSetTradeLoginField)(_pApp, strBrokerID, strUserID, strPassword);
         }
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-        public delegate IntPtr DealSetAuthenticateInfo(IntPtr pApp, string strAppID, string strAuthCode);
+        public delegate IntPtr DeleSetAuthenticateInfo(IntPtr pApp, string strAppID, string strAuthCode);
         public IntPtr SetAuthenticateInfo(string strAppID, string strAuthCode)
         {
-            return (Invoke(_handle, "SetAuthenticateInfo", typeof(DealSetAuthenticateInfo)) as DealSetAuthenticateInfo)(_pApp, strAppID, strAuthCode);
+            return (Invoke(_handle, "SetAuthenticateInfo", typeof(DeleSetAuthenticateInfo)) as DeleSetAuthenticateInfo)(_pApp, strAppID, strAuthCode);
         }
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-        public delegate IntPtr DealPandoraAppRun(IntPtr pApp, string strMdFront, string strTradeFront);
+        public delegate IntPtr DelePandoraAppRun(IntPtr pApp, string strMdFront, string strTradeFront);
         public IntPtr PandoraAppRun(string strMdFront, string strTradeFront)
         {
-            return (Invoke(_handle, "PandoraAppRun", typeof(DealPandoraAppRun)) as DealPandoraAppRun)(_pApp, strMdFront, strTradeFront);
+            return (Invoke(_handle, "PandoraAppRun", typeof(DelePandoraAppRun)) as DelePandoraAppRun)(_pApp, strMdFront, strTradeFront);
         }
 
-        //Quotes
+        //Call Back
         [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-        delegate void DeleSet(IntPtr spi, Delegate func);
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
-        public delegate void DeleOnRtnDepthMarketData(ref CThostFtdcDepthMarketDataField pDepthMarketData);
+        public delegate void DeleSetCallBack(IntPtr pApp, Delegate func);
+ 
+        //[UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
+        public delegate void DeleOnRtnDepthMarketData(ref cwFtdcDepthMarketDataField pDepthMarketData);
+        public void SetOnPriceUpdateCallBack(DeleOnRtnDepthMarketData func) { (Invoke(_handle, "SetPriceUpdateCallBack", typeof(DeleSetCallBack)) as DeleSetCallBack)(_pApp, func); }
 
-        public void SetOnRtnDepthMarketData(DeleOnRtnDepthMarketData func) { (Invoke(_handle, "SetPriceUpdateCallBack", typeof(DeleSet)) as DeleSet)(_pApp, func); }
+        //[UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
+        public delegate void DeleOnRtnOrder(ref cwFtdcOrderField pOrder, ref cwFtdcOrderField pOriginOrder);
+        public void SetOnRtnOrderCallBack(DeleOnRtnOrder func) { (Invoke(_handle, "SetOnRtnOrderCallBack", typeof(DeleSetCallBack)) as DeleSetCallBack)(_pApp, func); }
+
+        //[UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
+        public delegate void DeleOnRtnTrade(ref cwFtdcTradeField pTrade);
+        public void SetOnRtnTradeCallBack(DeleOnRtnTrade func) { (Invoke(_handle, "SetOnRtnTradeCallBack", typeof(DeleSetCallBack)) as DeleSetCallBack)(_pApp, func); }
+       
+        //Quotes
 
         //Trade
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
+        public delegate IntPtr DelePandoraGetAccount(IntPtr pApp);
+        public IntPtr PandoraGetAccount()
+        {
+            return (Invoke(_handle, "GetAccount", typeof(DelePandoraGetAccount)) as DelePandoraGetAccount)(_pApp);
+        }
 
-
+      
         #endregion
 
     }
