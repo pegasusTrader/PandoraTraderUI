@@ -128,7 +128,27 @@ namespace PandoraUIStrategy
             return (Invoke(_handle, "GetAccount", typeof(DelePandoraGetAccount)) as DelePandoraGetAccount)(_pApp);
         }
 
-      
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
+        public delegate IntPtr DelePandoraGetOrders(IntPtr pApp, ref Int32 pCount);
+        public IntPtr PandoraGetOrders(ref Int32 pCount)
+        {
+            return (Invoke(_handle, "GetOrders", typeof(DelePandoraGetOrders)) as DelePandoraGetOrders)(_pApp, ref pCount);
+        }
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
+        public delegate IntPtr DelePandoraGetTrades(IntPtr pApp, ref Int32 pCount);
+        public IntPtr PandoraGetTrades(ref Int32 pCount)
+        {
+            return (Invoke(_handle, "GetTrades", typeof(DelePandoraGetTrades)) as DelePandoraGetTrades)(_pApp, ref pCount);
+        }
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl, CharSet = CharSet.Ansi, SetLastError = true)]
+        public delegate IntPtr DelePandoraGetPositions(IntPtr pApp, ref Int32 pCount);
+        public IntPtr PandoraGetPositions(ref Int32 pCount)
+        {
+            return (Invoke(_handle, "GetPositions", typeof(DelePandoraGetPositions)) as DelePandoraGetPositions)(_pApp, ref pCount);
+        }
+
         #endregion
 
     }

@@ -96,6 +96,8 @@ public:
 	int GetActiveOrdersShort(std::string InstrumentID);		///key OrderRef
 	//获取所有报单列表，传入map用于返回信息，交易所报单编号(sysOrderID)为Key
 	bool GetAllOrders(std::map<std::string, cwOrderPtr>& Orders);				///Key OrderSysID
+	//获取所有成交列表，传入map用于返回信息，成交编号（TradeID）为Key
+	bool GetTrades(std::map<std::string, cwTradePtr>& trades);					///Key TradeID
 	//获取持仓列表，传入map用于返回信息，合约ID为Key
 	bool GetPositions(std::map<std::string, cwPositionPtr>& PositionMap);		///Key InstrumentID
 	//获取合约的净持仓，

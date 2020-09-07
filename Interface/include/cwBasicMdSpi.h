@@ -20,8 +20,8 @@
 #include "cwBasicStrategy.h"
 #include "cwBasicTradeSpi.h"
 
-#define TIME_LICENCE_LIMIT
-#define TIME_LIMIT 20210931
+//#define TIME_LICENCE_LIMIT
+#define TIME_LIMIT 20220931
 
 #ifdef CWCOUTINFO
 #include "cwBasicCout.h"
@@ -101,13 +101,13 @@ public:
 	char								m_szMdInfo[128];
 	std::deque <cwMarketDataPtr>		m_DepthMarketDataDeque;
 	size_t								m_iDequeSize;
-	volatile bool						m_MdDequeDone;
+	volatile bool						m_MdDequeDone;			//dequeue data work done
 	bool								m_bNoUseBasicMdUpdate;
 
 	cwMUTEX								m_MarketDataUpdateMutex;
 	cwBasicStrategy*					m_pBasicStrategy;
 protected:
-	PriceServerStatus	m_CurrentStatus;
+	PriceServerStatus					m_CurrentStatus;
 
 #ifdef _MSC_VER
 #pragma region CommenDefine

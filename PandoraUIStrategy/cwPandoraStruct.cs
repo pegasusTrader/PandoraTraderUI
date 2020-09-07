@@ -605,4 +605,43 @@ namespace PandoraUIStrategy
 		[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
 		public string OrderLocalID;
 	}
+
+	[StructLayout(LayoutKind.Sequential)]
+	public struct cwFtdcPositionField
+	{
+		///合约代码
+		[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+		public string InstrumentID;
+		///上日持仓
+		public System.Int32 YdPosition;
+		///今日持仓
+		public System.Int32 TodayPosition;
+		///总持仓
+		public System.Int32 TotalPosition;
+		///持仓冻结
+		public System.Int32 PositionFrozen;
+		///持仓成本
+		public double PositionCost;
+		///开仓成本
+		public double OpenCost;
+		///交易所保证金
+		public double ExchangeMargin;
+		///持仓均价
+		public double AveragePosPrice;
+		///持仓盈亏
+		public double PositionProfit;
+		///逐日盯市平仓盈亏
+		public double CloseProfitByDate;
+		///逐笔对冲平仓盈亏
+		public double CloseProfitByTrade;
+		///保证金率
+		public double MarginRateByMoney;
+		///保证金率(按手数)
+		public double MarginRateByVolume;
+		///持仓多空方向
+		public cwFtdcDirectionType PosiDirection;
+		///投机套保标志
+		public cwFtdcHedgeFlagType HedgeFlag;
+	}
+
 }
